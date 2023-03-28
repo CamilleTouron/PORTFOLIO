@@ -12,3 +12,12 @@
 - compétence/projet 
 - activités : voyages, courses, dessins, tricots
 - me contacter
+
+## Trello :
+https://trello.com/b/WxdmqCO2/portfolio
+
+## Canva :
+https://www.canva.com/design/DAFeeddQNGQ/hm4bpWHOY78o535ze7xN2Q/view?utm_content=DAFeeddQNGQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+## SQL Diagramme :
+https://drawsql.app/teams/greenswap/diagrams/portfolio
