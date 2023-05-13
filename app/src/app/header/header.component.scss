@@ -26,10 +26,6 @@
         align-items: center;
     }
 
-    .navbar-nav li app-colormode {
-        margin-top: 0.4rem;
-    }
-
     .navbar-collapse.show {
         display: flex !important;
         transform: scaleY(1);
