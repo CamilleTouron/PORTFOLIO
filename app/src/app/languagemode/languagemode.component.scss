@@ -1,0 +1,27 @@
+.btn.btn-outline-secondary {
+    color: #c3c3c3;
+    border-color: #c3c3c3;
+}
+
+.btn.btn-outline-secondary:hover {
+    background-color: #c3c3c3;
+    color: #3c3c3c;
+    font-weight: bold;
+}
+
+.btn.btn-outline-secondary:focus,
+.btn.btn-outline-secondary.focus {
+    box-shadow: 0 0 0 0.25rem #c3c3c3;
+    font-weight: bold;
+}
+
+.btn-group.btn-group-sm .btn-check:checked+label.btn.btn-outline-secondary {
+    background-color: #c3c3c3;
+    color: #3c3c3c;
+}
+
+.btn-group.btn-group-sm .btn-check:checked+label.btn.btn-outline-secondary:hover {
+    background-color: #c3c3c3;
+    color: #3c3c3c;
+    font-weight: bold;
+}
