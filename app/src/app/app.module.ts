@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { ColormodeComponent } from './colormode/colormode.component';
 import { LanguagemodeComponent } from './languagemode/languagemode.component';
 import { FooterComponent } from './footer/footer.component';
+import { DescriptionComponent } from './description/description.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     ColormodeComponent,
     LanguagemodeComponent,
-    FooterComponent
+    FooterComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
