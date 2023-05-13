@@ -9,6 +9,7 @@ import { ColormodeComponent } from './colormode/colormode.component';
 import { LanguagemodeComponent } from './languagemode/languagemode.component';
 import { FooterComponent } from './footer/footer.component';
 import { DescriptionComponent } from './description/description.component';
+import { CurrentComponent } from './current/current.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DescriptionComponent } from './description/description.component';
     ColormodeComponent,
     LanguagemodeComponent,
     FooterComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    CurrentComponent
   ],
   imports: [
     BrowserModule,
