@@ -1,30 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Description } from '../models/description';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DescriptionService {
-  private frenchDescription: Description;
-  private englishDescription: Description;
+  private apiUrl = '../../assets/mocks/';
 
-  constructor() {
-    this.frenchDescription = new Description(
-      'Bonjour, je suis',
-      ['Camille', 'Touron', 'Géniale']
-    );
+  constructor(private http: HttpClient) { }
 
-    this.englishDescription = new Description(
-      'Hello, I am',
-      ['Camille', 'Touron', 'Awesome']
-    );
+  getFrenchDescription(): Observable<Description> {
+    return this.http.get<Description>(this.apiUrl + 'description_fr.json');
   }
 
-  getFrenchDescription(): Description {
-    return this.frenchDescription;
-  }
-
-  getEnglishDescription(): Description {
-    return this.englishDescription;
+  getEnglishDescription(): Observable<Description> {
+    return this.http.get<Description>(this.apiUrl + 'description_en.json');
   }
 }
