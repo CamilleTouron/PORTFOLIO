@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LoginService } from '../services/login.service';
 
 @Component({
@@ -8,17 +8,18 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent {
   errorMessage: string;
+  @Input() isConnected: boolean;
+  @Output() isConnectedChange = new EventEmitter<boolean>();
 
   constructor(private loginService: LoginService) {
     this.errorMessage = '';
+    this.isConnected = false;
   }
 
   login(event: Event): void {
     event.preventDefault();
     const email = (<HTMLInputElement>document.getElementById('email')).value;
     const password = (<HTMLInputElement>document.getElementById('password')).value;
-    console.log('Email:', email);
-    console.log('Password:', password);
     if (email === '' || password === '') {
       this.errorMessage = 'Please enter both email and password';
       return;
@@ -29,9 +30,12 @@ export class LoginComponent {
         if (isValid) {
           console.log('Login successful');
           this.errorMessage = '';
-          //todo redirection
+          this.isConnected = true;
+          this.isConnectedChange.emit(true);
         } else {
           this.errorMessage = 'Invalid email or password';
+          this.isConnected = false;
+          this.isConnectedChange.emit(false);
         }
       },
       (error: any) => {

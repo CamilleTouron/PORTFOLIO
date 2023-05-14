@@ -1,8 +1,12 @@
 <div>
     <app-header [isFrench]="isFrench" (isFrenchChange)="isFrench = $event"></app-header>
-    <div *ngIf="isAdmin">
-        <app-login></app-login>
+    <div *ngIf="isAdmin && !isConnected">
+        <app-login [isConnected]="isConnected" (isConnectedChange)="onIsConnectedChange($event)"></app-login>
     </div>
+    <div *ngIf="isAdmin && isConnected">
+        <app-description-modifier></app-description-modifier>
+    </div>
+
     <div *ngIf="!isAdmin">
         <div id="about">
             <app-description [isFrench]="isFrench"></app-description>

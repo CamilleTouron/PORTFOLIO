@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
 export class BaseComponent implements OnInit {
   isFrench: boolean;
   isAdmin: boolean;
+  isConnected: boolean;
 
   constructor(private router: Router) {
     this.isFrench = true;
     this.isAdmin = false;
+    this.isConnected = false;
   }
 
   ngOnInit(): void {
@@ -26,5 +28,9 @@ export class BaseComponent implements OnInit {
   private checkIfAdmin(): void {
     const currentUrl = window.location.href;
     this.isAdmin = currentUrl.includes('admin');
+  }
+
+  onIsConnectedChange(isConnected: boolean): void {
+    this.isConnected = isConnected;
   }
 }

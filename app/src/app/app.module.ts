@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseComponent } from './base/base.component';
@@ -12,6 +12,7 @@ import { DescriptionComponent } from './description/description.component';
 import { CurrentComponent } from './current/current.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { DescriptionModifierComponent } from './decription-modifier/decription-modifier.component'
 
 @NgModule({
   declarations: [
@@ -23,13 +24,15 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     DescriptionComponent,
     CurrentComponent,
-    LoginComponent
+    LoginComponent,
+    DescriptionModifierComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
