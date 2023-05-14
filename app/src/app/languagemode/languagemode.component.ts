@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-languagemode',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./languagemode.component.scss']
 })
 export class LanguagemodeComponent {
-  //TODO CHANGER DE LANGUAGE
+  @Input() isFrench!: boolean;
+  @Output() isFrenchChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  toggleIsFrench(): void {
+    this.isFrench = !this.isFrench;
+    this.isFrenchChange.emit(this.isFrench);
+  }
 }

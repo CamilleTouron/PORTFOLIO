@@ -1,8 +1,10 @@
-<app-header></app-header>
-<div id="about">
-    <app-description [description]="description"></app-description>
+<div>
+    <app-header [isFrench]="isFrench" (isFrenchChange)="isFrench = $event"></app-header>
+    <div id="about">
+        <app-description [isFrench]="isFrench"></app-description>
+    </div>
+    <div id="currentId">
+        <app-current [isFrench]="isFrench"></app-current>
+    </div>
+    <app-footer [isFrench]="isFrench"></app-footer>
 </div>
-<div id="currentId">
-    <app-current [current]="current"></app-current>
-</div>
-<app-footer></app-footer>

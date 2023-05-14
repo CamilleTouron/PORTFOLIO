@@ -1,6 +1,7 @@
 <div>
-    <h2>{{ current.title }}</h2>
-    <p>{{ current.content }}</p>
-    <a *ngIf="current.link && current.titleLink" href="{{ current.link }}">{{ current.titleLink }}</a>
-    <img *ngIf="current.pictureLink" [src]="current.pictureLink" alt="Current Picture">
+    <h2>{{ getCurrent().title }}</h2>
+    <p>{{ getCurrent().content }}</p>
+    <a *ngIf="getCurrent().link && getCurrent().titleLink" href="{{ getCurrent().link }}">{{ getCurrent().titleLink
+        }}</a>
+    <img *ngIf="getCurrent().pictureLink" [src]="getCurrent().pictureLink" alt="getCurrent().Picture">
 </div>

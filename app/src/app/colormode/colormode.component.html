@@ -1,6 +1,8 @@
 <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-  <input type="radio" class="btn-check" name="colormode" id="light" autocomplete="off" checked />
-  <label class="btn btn btn-outline-secondary" for="light">light</label>
-  <input type="radio" class="btn-check" name="colormode" id="dark" autocomplete="off" />
-  <label class="btn btn btn-outline-secondary" for="dark">dark</label>
+  <input type="radio" class="btn-check" name="colormode" id="light" autocomplete="off" [checked]="isLight"
+    (click)="toggleIsLight()" checked />
+  <label class="btn btn btn-outline-secondary" for="light">{{colorMode.light}}</label>
+  <input type="radio" class="btn-check" name="colormode" id="dark" autocomplete="off" [checked]="!isLight"
+    (click)="toggleIsLight()" />
+  <label class="btn btn btn-outline-secondary" for="dark">{{colorMode.dark}}</label>
 </div>

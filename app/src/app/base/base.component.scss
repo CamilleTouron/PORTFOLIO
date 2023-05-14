@@ -1,0 +1,33 @@
+.base-content.light-theme {
+    background-color: #f5f5f5;
+    color: #000;
+
+    ::ng-deep {
+
+        .div,
+        .a,
+        .footer,
+        .nav,
+        .p {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+    }
+}
+
+.base-content.dark-theme {
+    background-color: #333;
+    color: #fff;
+
+    ::ng-deep {
+
+        .div,
+        .a,
+        .footer,
+        .nav,
+        .p {
+            background-color: #333;
+            color: #fff;
+        }
+    }
+}

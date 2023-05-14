@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Current } from '../../models/current';
+import { CurrentService } from '../services/current.service';
 
 @Component({
   selector: 'app-current',
@@ -7,5 +8,9 @@ import { Current } from '../../models/current';
   styleUrls: ['./current.component.scss']
 })
 export class CurrentComponent {
-  @Input() current!: Current;
+  @Input() isFrench!: boolean;
+  constructor(private currentService: CurrentService) { }
+  getCurrent(): Current {
+    return this.isFrench ? this.currentService.getFrenchCurrent() : this.currentService.getEnglishCurrent();
+  }
 }

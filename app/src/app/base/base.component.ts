@@ -1,18 +1,30 @@
-import { Component } from '@angular/core';
-import { Description } from '../../models/description';
-import { Current } from '../../models/current';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-base',
   templateUrl: './base.component.html',
   styleUrls: ['./base.component.scss']
 })
-export class BaseComponent {
-  description: Description;
-  current: Current;
+export class BaseComponent implements OnInit {
+  isFrench: boolean;
+  isAdmin: boolean;
 
-  constructor() {
-    this.description = new Description('Hello world I am ', ['Camille', 'Touron', 'Awesome']);
-    this.current = new Current('Currently ...', 'In apprenticeship', '', '', '');
+  constructor(private router: Router) {
+    this.isFrench = true;
+    this.isAdmin = false;
+  }
+
+  ngOnInit(): void {
+    this.checkIfAdmin();
+  }
+
+  toggleIsFrench(): void {
+    this.isFrench = !this.isFrench;
+  }
+
+  private checkIfAdmin(): void {
+    const url = this.router.url;
+    this.isAdmin = url.endsWith('/admin');
   }
 }

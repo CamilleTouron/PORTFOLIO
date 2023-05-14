@@ -1,6 +1,8 @@
 <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-  <input type="radio" class="btn-check" name="language" id="fr" autocomplete="off" checked />
+  <input type="radio" class="btn-check" name="language" id="fr" autocomplete="off" (click)="toggleIsFrench()"
+    value="true" />
   <label class="btn btn btn-outline-secondary" for="fr">fr</label>
-  <input type="radio" class="btn-check" name="language" id="en" autocomplete="off" />
+  <input type="radio" class="btn-check" name="language" id="en" autocomplete="off" (click)="toggleIsFrench()"
+    value="false" />
   <label class="btn btn btn-outline-secondary" for="en">en</label>
 </div>
