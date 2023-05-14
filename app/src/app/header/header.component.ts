@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ColorMode } from '../../models/colormode';
-import { Header } from 'src/models/header';
+import { ColorMode } from '../models/colormode';
+import { Header } from 'src/app/models/header';
 import { HeaderService } from '../services/header.service';
 
 @Component({

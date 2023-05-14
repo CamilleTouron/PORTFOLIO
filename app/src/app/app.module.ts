@@ -10,6 +10,8 @@ import { LanguagemodeComponent } from './languagemode/languagemode.component';
 import { FooterComponent } from './footer/footer.component';
 import { DescriptionComponent } from './description/description.component';
 import { CurrentComponent } from './current/current.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { CurrentComponent } from './current/current.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

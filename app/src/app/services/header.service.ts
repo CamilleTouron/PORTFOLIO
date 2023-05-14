@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Header } from '../../models/header';
+import { Header } from '../models/header';
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ColorMode } from '../../models/colormode';
+import { ColorMode } from '../models/colormode';
 
 @Component({
   selector: 'app-colormode',

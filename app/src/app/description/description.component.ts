@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { interval } from 'rxjs';
-import { Description } from '../../models/description';
+import { Description } from '../models/description';
 import { DescriptionService } from '../services/description.service';
 
 @Component({
