@@ -1,36 +1,26 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Current } from '../models/current';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CurrentService {
-  private frenchCurrent: Current;
-  private englishCurrent: Current;
+  private apiUrl = '../../assets/mocks/current_';
 
-  constructor() {
-    this.frenchCurrent = new Current(
-      'Actuellement...',
-      'En apprentissage',
-      '',
-      '',
-      ''
-    );
+  constructor(private http: HttpClient) { }
 
-    this.englishCurrent = new Current(
-      'Currently...',
-      'In apprenticeship',
-      '',
-      '',
-      ''
+  getFrenchCurrent(): Observable<Current> {
+    return this.http.get<Current>(this.apiUrl + 'fr.json').pipe(
+      map((current: Current) => current)
     );
   }
 
-  getFrenchCurrent(): Current {
-    return this.frenchCurrent;
-  }
-
-  getEnglishCurrent(): Current {
-    return this.englishCurrent;
+  getEnglishCurrent(): Observable<Current> {
+    return this.http.get<Current>(this.apiUrl + 'en.json').pipe(
+      map((current: Current) => current)
+    );
   }
 }
