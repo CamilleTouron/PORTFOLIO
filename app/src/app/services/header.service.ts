@@ -1,36 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Header } from '../models/header';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeaderService {
-  private frenchHeader: Header;
-  private englishHeader: Header;
+  private apiUrl = '../../assets/mocks/header_';
 
-  constructor() {
-    this.frenchHeader = new Header();
-    this.frenchHeader.brand = 'Camille Touron';
-    this.frenchHeader.about = 'À propos';
-    this.frenchHeader.current = 'Actuel';
-    this.frenchHeader.toolbox = 'Boîte à outils';
-    this.frenchHeader.projects = 'Projets';
-    this.frenchHeader.contact = 'Contact';
+  constructor(private http: HttpClient) { }
 
-    this.englishHeader = new Header();
-    this.englishHeader.brand = 'Camille Touron';
-    this.englishHeader.about = 'About';
-    this.englishHeader.current = 'Current';
-    this.englishHeader.toolbox = 'Toolbox';
-    this.englishHeader.projects = 'Projects';
-    this.englishHeader.contact = 'Contact';
+  getFrenchHeader(): Observable<Header> {
+    return this.http.get<Header>(this.apiUrl + 'fr.json');
   }
 
-  getFrenchHeader(): Header {
-    return this.frenchHeader;
-  }
-
-  getEnglishHeader(): Header {
-    return this.englishHeader;
+  getEnglishHeader(): Observable<Header> {
+    return this.http.get<Header>(this.apiUrl + 'en.json');
   }
 }
