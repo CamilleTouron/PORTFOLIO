@@ -1,10 +1,16 @@
 <div>
     <app-header [isFrench]="isFrench" (isFrenchChange)="isFrench = $event"></app-header>
-    <div id="about">
-        <app-description [isFrench]="isFrench"></app-description>
+    <div *ngIf="isAdmin">
+        <app-login></app-login>
     </div>
-    <div id="currentId">
-        <app-current [isFrench]="isFrench"></app-current>
+    <div *ngIf="!isAdmin">
+        <div id="about">
+            <app-description [isFrench]="isFrench"></app-description>
+        </div>
+        <div id="currentId">
+            <app-current [isFrench]="isFrench"></app-current>
+        </div>
     </div>
+
     <app-footer [isFrench]="isFrench"></app-footer>
 </div>

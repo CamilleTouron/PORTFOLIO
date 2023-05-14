@@ -1,0 +1,16 @@
+<form class="cool-grey-form" (submit)="login($event)">
+    <h2 class="mb-3">Login</h2>
+    <div class="form-controls">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password"
+                required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+</form>

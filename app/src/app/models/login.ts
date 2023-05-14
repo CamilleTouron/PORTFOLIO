@@ -1,18 +1,18 @@
 export class Login {
-    private _id: string;
+    private _email: string;
     private _password: string;
 
-    constructor(id: string, password: string) {
-        this._id = id;
+    constructor(email: string, password: string) {
+        this._email = email;
         this._password = password;
     }
 
-    get id(): string {
-        return this._id;
+    get email(): string {
+        return this._email;
     }
 
-    set id(value: string) {
-        this._id = value;
+    set email(value: string) {
+        this._email = value;
     }
 
     get password(): string {

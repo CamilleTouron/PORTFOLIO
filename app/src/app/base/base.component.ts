@@ -24,7 +24,7 @@ export class BaseComponent implements OnInit {
   }
 
   private checkIfAdmin(): void {
-    const url = this.router.url;
-    this.isAdmin = url.endsWith('/admin');
+    const currentUrl = window.location.href;
+    this.isAdmin = currentUrl.includes('admin');
   }
 }
