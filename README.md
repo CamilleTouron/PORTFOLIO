@@ -4,8 +4,6 @@
 
 - site vitrine pour me présenter
 - systeme de gestion de contenu pour l'ajout et la modification de projet
-- bdd pour stocker les droits admin et les projets/compétences
-- mise en production
 
 ## Liste des contents :
 
